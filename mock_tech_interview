@@ -1,0 +1,15 @@
+know ES5 vs ES6, how to do things in both
+
+given array of [start_time, end_time], make function merge_events(arr)
+to find time blocks that are occupied
+ex: [ [1, 4], [1, 2], [3, 5], [1, 4], [6, 7] ] => [ [1, 5], [6, 7] ]
+
+steps:
+  - sort array by start time
+  - results array shovel in first
+  - compare end times & replace as necessary
+  - shovel in next event if no overlap
+  - always comparing the last element in results
+
+common questions - array sorting
+  what is the largest consecutive product of 3 numbers given an array?
