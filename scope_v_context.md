@@ -8,6 +8,9 @@ Scope - pertains to visibility of variables
     - any variables in-scope at time closure declared remain available
     - closures maintain a reference to the environment it was created when these
       variables existed
+    - good for privatizing variables (only the closure has reference to variable)
+      and currying functions (breaking down function that takes multiple arguments
+      into series of functions that take part of the arguments)
 
 Context - refers to the object within which a function is executed
   - JS keyword "this" refers to object the function is executing in
