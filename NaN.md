@@ -5,9 +5,12 @@ NaN is usually a return value when a Math function fails (Math.sqrt(-1)) or when
 
 NaN compares unequal to any other value, including to another NaN value
 isNaN() can determine whether the value is NaN
-alternatively, self comparison, NaN and only NaN will compare equal to itself
-NaN === NaN
+alternatively, self comparison, NaN and only NaN will compare unequal to itself
+NaN === NaN is false
 
 NaN is the only value in JS that is unequal to itself
 undefined === undefined is true
 null === null is true
+
+if a is NaN
+a === a will return false, if and only a is NaN
