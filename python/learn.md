@@ -8,6 +8,8 @@ Python 3
 
 ```
 print("hello world")    // print a string
+
+greeting = input("Enter a greeting:")   // prints prompt and waits for input, like Ruby gets
 ```
 
 Blocks are indicated by indentation, 4 spaces
@@ -25,6 +27,10 @@ mathematical operations, modulo is same as Ruby
 myint = 7
 myfloat = 7.0
 myfloat = float(7)
+
+divide = 7 // 2   // integer division, rounds down to nearest whole number
+
+int("900")  // convert string to integer
 ```
 
 Strings defined with single or double quotes
@@ -36,8 +42,8 @@ Simultaneously assignment
 
 `None` in Python is `nil` in Ruby, `null` in JS
 
-Lists
-  - similar to arrays, zero-indexed
+Lists & Dictionaries
+  - similar to arrays & hashes, zero-indexed
   - accessing an index which does not exist generates an exception
   - array concatenation is same as Ruby
 
@@ -47,6 +53,18 @@ mylist.append(1)
 mylist.append(2)
 mylist[0]
 mylist[1]
+mylist.remove(2)
+del mylist[0]
+del mylist[:2]    // delete a slice
+
+myDictionary = {}
+myDictionary["something"] = "hello"
+myDictionary["something"]
+myDictionary.get("blah")  // returns none if word not in dictionary instead of crashing program
+del myDictionary["something"]
+
+myDictionary.keys()   // get list of keys in dictionary
+myDictionary.values()   // get list of values in dictionary
 
 for x in mylist:
     print(x)
@@ -64,8 +82,11 @@ string interpolation
 
 String operations
   - `string = "hello world"`
+  - `str(number)` - convert number into string
+  - `len(string)` - get the length of string
   - `string.index("o")` - location of first occurrence of letter
   - `string.count("l")` - number of l's in string
+  - slice formula: variable[start:end+1]
   - `string[3:7]` - "lo w" slice letters from index 3 up to but not including 7
   - `string[:4]` - everything up but not including index 4
   - `string[3:]` - everything from 3 to the end
@@ -79,6 +100,7 @@ String operations
   - `string.split(" ")`
 
 Conditions
+  - comparators `<`, `<=`, `==`, `>=`, `>`, `!=`
   - assign is ``=``, comparison is ``==``, ``!=``
   - `and`, `or` is equivalent to Ruby &&, ||
   - `in` operator checks if specified object exists within an iterable object container (such as list, like Ruby `includes`)
@@ -138,6 +160,13 @@ for x in range(3, 6):
 
 for x in range(3, 8, 2):
   print(x)   // prints every 2nd from 3 to 7
+```
+
+for loops with dictionaries:
+
+```
+for name, price in menu_prices.items():
+  print(name, ': $', format(price, '.2f'), sep="")   // sep removes space separator in print
 ```
 
 `while` loop - repeat as long as certain boolean condition met
