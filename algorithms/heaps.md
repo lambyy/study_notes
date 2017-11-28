@@ -21,4 +21,32 @@ A heap is a binary tree that follows the following constraints
   - pop, O(log n) time
   - swap root node and last element, then swap root node with its smallest child until it is in the correct position (heapify down)
   - min/max can be popped from the end
-  
+
+### Implementation
+  - A heap can be represented using an array
+  - Root (min/max value) is represented as the first element in array (#peek)
+  - Bottom right most element in tree is represented by the last element in array
+
+```
+  // given parent index, children index can be found by:
+  2i + 1
+  2i + 2
+
+  // given child index, parent index can be found by:
+  (i - 1) / 2
+```
+
+## Heapsort
+
+O(n log n)
+
+Steps:
+  - insert elements into heap (heapifies up, has to insert n times, insertion is 0(log n))
+  - extract min/max value from heap (heapifies down, has to extract n times, extraction is O(log n))
+  - extracted values will be in order
+
+To do heapsort in place, keep track of a boundary, one side is heap, the other is the array/sorted array
+
+Why heapsort?
+  - stability, worse case is O(n log n)
+  - in place sort saves space
