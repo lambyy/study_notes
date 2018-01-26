@@ -131,4 +131,8 @@ scope is what variables are accessible in a given place in the code
   - can be as simple as passing a function to `forEach()`
 
 ### Ruby vs JS
-  see comparison chart
+  see comparison chart https://appacademy.github.io/curriculum/language_comparison/index.html
+
+### JS Promises
+
+https://scotch.io/tutorials/javascript-promises-for-dummies
