@@ -33,16 +33,28 @@ Optimized web pages provides
 - use modern AJAX methods to manipulate page content
 
 ## 7. Use Modern CSS & Valid Markup
-- 
+- modern CSS reduces amount of markup
+- reduce need for spacer images
+- can replace images of stylized text
+- valid markups allow use of preprocessors and eliminate need for browsers to perform error-correction when parsing
 
+## 8. Chunk Your Content
+- table layouts are a legacy method
+- use floats, positioning, flexbox & grids
+- tables can still be used for displaying tabular data but avoid nesting them
 
+## 9. Minify/Compress SVG assets
+- svg contain unnecessary metadata which can and should be removed
 
+## 10. Specify Image & Table Sizes
+- allows browser to display web content without having to reflow it if height & width of image can be immediately determined
 
+## 11. User-agent requirements
+- project contents do not have to be pixel perfect in all browsers
 
-
-
-
-
+## 12. Use Async/Defer  
+- make scripts compatible with `async` and `defer`
+- prevents page from rendering while JS still loading
 
 
 
