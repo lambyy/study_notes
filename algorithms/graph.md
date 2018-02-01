@@ -49,3 +49,6 @@ Graph Representations:
 - Adjacency List: array/hash of all nodes in graph & array or other data structure (linked list) containing a list of edges
   - pro: better space complexity O(e) since most graphs are sparse e << v^2, no redundancy
   - con: time complexity for finding if two nodes are adjacent, requires linear or binary search, costly O(v), however, if we use the assumption of a sparse graph, this data structure will save time compared to the matrix
+
+Graph Traversal:
+- DFS uses stack, BDS uses queue
