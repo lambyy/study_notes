@@ -5,10 +5,10 @@ Scope - pertains to visibility of variables
 
   closures - combination of function and environment that function was declared
     - local variable declared outside of function is accessible inside the closure
-    - any variables in-scope at time closure declared remain available
+    - any variables in-scope at time closure declared remain available even after it leaves the scope in which it was declared
     - closures maintain a reference to the environment it was created when these
       variables existed
-    - good for privatizing variables (only the closure has reference to variable)
+    - good for privatizing variables/data encapsulation (only the closure has reference to variable)
       and currying functions (breaking down function that takes multiple arguments
       into series of functions that take part of the arguments)
 
