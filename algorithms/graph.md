@@ -52,3 +52,9 @@ Graph Representations:
 
 Graph Traversal:
 - DFS uses stack, BDS uses queue
+  https://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/
+
+Topological Sort:
+- linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge uv, vertex u comes before v in the ordering
+- can have more than one sorting for a graph
+- usually for applications like scheduling jobs and package loading order, where dependencies must be loaded prior
