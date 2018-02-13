@@ -132,6 +132,32 @@ scope is what variables are accessible in a given place in the code
 
 ### Ruby vs JS
   see comparison chart https://appacademy.github.io/curriculum/language_comparison/index.html
+  
+### ES5 vs ES6
+  1. Block Scope
+    - ES5 only "function-level scoping" - code in wrapped in function creates new scope
+    - ES6 provides "block-level scoping" when using curly braces & let/const
+    - this prevents variable hoisting outside of scope (for example undesirable hoisting of variables inside if block)
+    - also prevents duplicate declaration of variables in same scope
+    - eliminates need for IIFE to avoid polluting global scope
+    - in looping functions, creates local variables to avoid hoising issues
+  2. Lexical "this"
+    - ES5 "this" varies based on where/how it is called
+    - ES6 fix by by forcing "this" to always point to object where it is physically located within
+    - previous fixes used `bind` or assigning "this" in a local variable
+    - using fat-arrow function to get lexical "this" automatically
+  3. Arguments
+    - ES5 "arguments" act like Arrays (can be looped over) but are not Arrays so functions like sort, slice, etc not available
+    - ES6 "rest" paramenters (`...args`) is an Array & allows Array functions
+  4. Classes
+    - conceptually, JS does not have Classes, but function constructors that create Objects with "new" keyword are treated as Classes
+    - ES6 allows new syntax to be more like other traditional OO languages
+  5. Strict Mode
+    - `use strict` helps identify common issues
+    - optional in ES5, but needed for many ES8 features
+    - tools like babel automatically add `use strict` to top of file
+
+source: https://medium.freecodecamp.org/5-javascript-bad-parts-that-are-fixed-in-es6-c7c45d44fd81
 
 ### JS Promises
 
