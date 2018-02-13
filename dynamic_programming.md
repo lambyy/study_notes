@@ -9,4 +9,8 @@ Overlapping Subproblems property - in recursion, when subproblems are the same a
 Solutions:
 
 1. memoization (top-down) - store results in memory whenever we solve the problem for the first time
+  - avoids computing solutions to subproblems that are not needed  
+
+
 2. tabulation (bottom-up) - precompute solutions in linear fashion and store in table to perform look ups later
+  - avoids multiple lookups, saving function call overhead time
