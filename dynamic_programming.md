@@ -2,7 +2,7 @@
 
 Dynamic Programming is an algorithmic paradigm that solves a given complex problem by breaking it into subproblems and storing the results of subproblems to avoid computing the same results again.
 
-Optimal Substructure property - where a problem has a recursive definition
+Optimal Substructure property - when the optimal solution of the given problem can be obtained by using optimal solutions of its subproblems
 
 Overlapping Subproblems property - in recursion, when subproblems are the same and need to be solved repeated
 
