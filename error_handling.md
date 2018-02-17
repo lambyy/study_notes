@@ -1,1 +1,3 @@
 ## Try/Catch
+
+## Custom Errors
