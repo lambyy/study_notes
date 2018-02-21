@@ -16,3 +16,6 @@
 source: https://javascript.info/try-catch
 
 ## Custom Errors
+- use `instanceof` to check for particular errors, this works for inheritance too 
+
+source: https://javascript.info/custom-errors
