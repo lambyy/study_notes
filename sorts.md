@@ -34,3 +34,4 @@
 - tree structure consisting of noes with parent, left & right child properties
 - all nodes on left subtree must be less than root node, all nodes on right subtree must be greater than root node
 - every subtree is a valid bst
+- O(log n) insertion, deletion, find if able to keep tree balanced
