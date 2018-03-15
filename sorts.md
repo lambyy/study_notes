@@ -28,10 +28,13 @@
 ### Bubble sort
 - O(n^2) comparisons & swaps, stable, O(n) extra space, O(n) for nearly sorted
 
-
-
 ### Binary search tree
 - tree structure consisting of noes with parent, left & right child properties
 - all nodes on left subtree must be less than root node, all nodes on right subtree must be greater than root node
 - every subtree is a valid bst
 - O(log n) insertion, deletion, find if able to keep tree balanced
+
+### Binary Search 
+- search sorted array by repeated dividing search interval in half
+- narrow search interval if search value is less/greater than middle value, repeat until search value found or null
+- O(log n)
