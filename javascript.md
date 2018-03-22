@@ -162,3 +162,5 @@ source: https://medium.freecodecamp.org/5-javascript-bad-parts-that-are-fixed-in
 ### JS Promises
 
 https://scotch.io/tutorials/javascript-promises-for-dummies
+
+- in promise chaining: if returned value is a promise, further execution is suspended until it settles. 
