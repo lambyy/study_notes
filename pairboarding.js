@@ -21,3 +21,23 @@ function digitalRoot(num) {
 // console.log(digitalRoot(3));
 // console.log(digitalRoot(123));
 // console.log(digitalRoot(456));
+
+// caesar cipher
+
+// Write a function that takes a message and an increment amount and
+// outputs the same letters shifted by that amount in the alphabet.
+// Assume lowercase and no punctuation. Preserve spaces.
+
+const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split("");
+
+function caesarCipher(msg, shift) {
+  return msg.split("").map(char => {
+    if(char === " ") return " ";
+    let initialIdx = alphabet.indexOf(char);
+    let newIdx = (initialIdx + shift) % alphabet.length;
+    return alphabet[newIdx];
+  }).join("");
+}
+
+// console.log(caesarCipher("hello there", 1));
+// console.log("abcd", 7);
