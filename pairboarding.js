@@ -77,15 +77,23 @@ function longestCommonSubstring(str1, str2) {
 function sumRec(arr) {
   if(arr.length < 1) {
     return 0;
-  } else if(arr.length === 1) {
-    return arr[0];
   } else {
-    let a = arr.pop();
-    let b = arr.pop();
-    arr.push(a + b);
-    return sumRec(arr);
+    return arr[0] + sumRec(arr.slice(1));
   }
 }
+
+// function sumRec(arr) {
+//   if(arr.length < 1) {
+//     return 0;
+//   } else if(arr.length === 1) {
+//     return arr[0];
+//   } else {
+//     let a = arr.pop();
+//     let b = arr.pop();
+//     arr.push(a + b);
+//     return sumRec(arr);
+//   }
+// }
 
 // console.log(sumRec([1, 2, 3]));
 // console.log(sumRec([4, 5, 6]));
