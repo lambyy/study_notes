@@ -41,3 +41,28 @@ function caesarCipher(msg, shift) {
 
 // console.log(caesarCipher("hello there", 1));
 // console.log("abcd", 7);
+
+// common substrings
+
+// Write a function, longest_common_substring(str1, str2) that takes two
+// strings and returns the longest common substring. A substring is defined
+// as any consecutive slice of letters from another string.
+
+function longestCommonSubstring(str1, str2) {
+  let longest = "";
+  for(let i = 0; i < str1.length; i++) {
+    let j = i + 1;
+    let substring = str1.slice(i, j);
+    while(str2.indexOf(substring) >= 0 && j < str1.length) {
+      j++;
+      substring = str1.slice(i, j);
+    }
+    if(substring.length - 1 > longest.length) longest = substring.slice(0, -1);
+  }
+  return longest;
+}
+
+// console.log(longestCommonSubstring("hello there", "let there be light"));
+// console.log(longestCommonSubstring("whatdoyoumean?", "howdoyoudo"));
+
+// sum_rec
