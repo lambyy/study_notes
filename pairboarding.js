@@ -51,18 +51,42 @@ function caesarCipher(msg, shift) {
 function longestCommonSubstring(str1, str2) {
   let longest = "";
   for(let i = 0; i < str1.length; i++) {
-    let j = i + 1;
-    let substring = str1.slice(i, j);
-    while(str2.indexOf(substring) >= 0 && j < str1.length) {
+    let j = i + longest.length + 1;
+    while(j < str1.length + 1) {
+      let substring = str1.slice(i, j);
+      if(str2.indexOf(substring) >= 0) longest = substring;
       j++;
-      substring = str1.slice(i, j);
     }
-    if(substring.length - 1 > longest.length) longest = substring.slice(0, -1);
   }
   return longest;
 }
 
-// console.log(longestCommonSubstring("hello there", "let there be light"));
+// console.log(longestCommonSubstring("hellothere", "let there be light"));
 // console.log(longestCommonSubstring("whatdoyoumean?", "howdoyoudo"));
 
+// String.slice(beginIdx[, endIdx])
+// zero-based index to start extraction, if negative treated as strLength + beginIdx
+// if beginIdx >= strLength, returns empty String
+// endIdx is zero-based index to end extraction, char at this index not included
+// slice to end if omitted, treated as strLength + endIdx if negative
+
 // sum_rec
+
+// Write a function that takes an array of integers and returns their sum. Use recursion.
+
+function sumRec(arr) {
+  if(arr.length < 1) {
+    return 0;
+  } else if(arr.length === 1) {
+    return arr[0];
+  } else {
+    let a = arr.pop();
+    let b = arr.pop();
+    arr.push(a + b);
+    return sumRec(arr);
+  }
+}
+
+// console.log(sumRec([1, 2, 3]));
+// console.log(sumRec([4, 5, 6]));
+// console.log(sumRec([11, 19, 21, 3, 5]));
