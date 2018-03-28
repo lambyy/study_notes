@@ -153,5 +153,34 @@ function isPalindrome(str) {
   return true;
 }
 
-console.log(isPalindrome('hello'));
-console.log(isPalindrome('racecar'));
+// console.log(isPalindrome('hello'));
+// console.log(isPalindrome('racecar'));
+
+// validIP
+
+// Write a method that takes a string as input. It should return true if the
+// input is a valid IPv4 address (ie. anything between 0.0.0.0 and 255.255.255.255 is valid).
+
+function validIp(ip) {
+  const chunks = ip.split(".");
+
+  if(chunks.length !== 4) return false;
+  for(let i = 0; i < chunks.length; i++) {
+    if(chunks[i] < 0 || chunks[i] > 255) return false;
+  }
+  return true;
+}
+
+// forEach executes provided function once for each array element in asc order
+// returns undefined, not chainable
+// range of elements set before first invocation so elements appended after
+// will not be visited, if values of existing elements are changed, values
+// passed to function will be values at time forEach() visits them,
+// values deleted before being visited will not be visited, if elements already
+// visited are removed, later elements will be skipped
+// there is not way to stop or break a forEach() loop
+
+// console.log(validIp('0.0.0.0'));
+// console.log(validIp('255.255.255.255'));
+// console.log(validIp('256.255.255.255'));
+// console.log(validIp('255.255.255'));
