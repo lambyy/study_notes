@@ -165,10 +165,10 @@ function validIp(ip) {
   const chunks = ip.split(".");
 
   if(chunks.length !== 4) return false;
-  for(let i = 0; i < chunks.length; i++) {
-    if(chunks[i] < 0 || chunks[i] > 255) return false;
-  }
-  return true;
+  // for(let i = 0; i < chunks.length; i++) {
+  //   if(chunks[i] < 0 || chunks[i] > 255) return false;
+  // }
+  return chunks.every(chunk => chunk >= 0 && chunk <= 255);
 }
 
 // forEach executes provided function once for each array element in asc order
