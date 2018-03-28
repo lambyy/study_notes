@@ -98,3 +98,34 @@ function sumRec(arr) {
 // console.log(sumRec([1, 2, 3]));
 // console.log(sumRec([4, 5, 6]));
 // console.log(sumRec([11, 19, 21, 3, 5]));
+
+// fibs
+
+// Write a function, fibs(num) which returns the first n elements from
+// the fibonnacci sequence, given n.
+// Solve it both iteratively and recursively.
+
+function fibsIterative(n) {
+  const fibs = [0, 1];
+  if(n < 3) return fibs.slice(0, n);
+
+  while(fibs.length < n) {
+    fibs.push(fibs[fibs.length - 1] + fibs[fibs.length - 2]);
+  }
+
+  return fibs;
+}
+
+function fibsRecursive(n) {
+  const fibs = [0, 1];
+  if(n < 3) return fibs.slice(0, n);
+
+  const prevFib = fibsRecursive(n - 1);
+  prevFib.push(prevFib[prevFib.length - 1] + prevFib[prevFib.length -2]);
+  return prevFib;
+}
+
+// console.log(fibsIterative(5));
+// console.log(fibsIterative(10));
+// console.log(fibsRecursive(5));
+// console.log(fibsRecursive(10));
