@@ -129,3 +129,29 @@ function fibsRecursive(n) {
 // console.log(fibsIterative(10));
 // console.log(fibsRecursive(5));
 // console.log(fibsRecursive(10));
+
+// isPalindrome
+
+// Write a JavaScript function that takes a string and returns true if it's
+// a palindrome, false if it's not.
+//
+// This solution takes less time and memory than rebuilding the string backward
+// and comparing the two.
+
+function isPalindrome(str) {
+  let i = 0;
+  let j = str.length - 1;
+
+  while(i < j) {
+    if(str[i] !== str[j]) {
+      return false;
+    } else {
+      i++;
+      j--;
+    }
+  }
+  return true;
+}
+
+console.log(isPalindrome('hello'));
+console.log(isPalindrome('racecar'));
