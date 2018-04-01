@@ -184,3 +184,5 @@ function validIp(ip) {
 // console.log(validIp('255.255.255.255'));
 // console.log(validIp('256.255.255.255'));
 // console.log(validIp('255.255.255'));
+
+// indexOf() 
