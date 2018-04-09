@@ -59,3 +59,44 @@ function jumpGame(arr) {
 
   return (zeros.join("") === "" ? true : false);
 }
+
+// Number of Islands
+// Given nested 2D array of 1's (land) and 0's (water)
+// find the number of islands where islands is defined as horizontal
+// or vertical connecting 1's, assume grid out of bounds is water
+
+var numIslands = function(grid) {
+    let counter = 0;
+    let islands = {};
+
+    for (let row = 0; row < grid.length; row++) {
+        for (let col = 0; col < grid[row].length; col++) {
+            if(grid[row][col] === "1") islands[[row, col]] = true;
+        }
+    }
+
+    let visited = [];
+    while (Object.keys(islands).length > 0) {
+        let pos = Object.keys(islands)[0].split(",").map(num => parseInt(num));
+        visited.push(pos);
+        delete islands[pos];
+
+        while(visited.length > 0) {
+            let adjacent = surrounding(visited.shift());
+            adjacent.forEach(adj => {
+               if(islands[adj]) {
+                   visited.push(adj);
+                   delete islands[adj];
+               }
+            });
+        }
+        counter++;
+    }
+
+    return counter;
+};
+
+var surrounding = function(pos) {
+    let [x, y] = pos;
+    return [[x + 1, y], [x - 1, y], [x, y + 1], [x, y - 1]];
+};
