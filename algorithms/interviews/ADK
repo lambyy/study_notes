@@ -1,0 +1,96 @@
+/*
+Question 1
+
+Given a list of locations with length N where each location is represented by the following object
+
+{
+	name: "Berkeley",
+	desiredInventory: 10,
+	currentInventory: 5
+}
+
+determine whether or not each location has sufficient inventory. A location is defined as having suffient inventory if the desired and current inventory match. 
+
+Return the validation result in the following format. 
+
+[ 
+  {
+    name: "loc1",
+    isValid: true
+  },
+  {
+    name: "loc2",
+    isValid: false
+  }
+]
+*/
+
+const validateInventory = (locations) => {
+  const copy = [...locations];
+  return copy.map((loc) => {
+  	return {
+      name: loc.name,
+      isValid: loc.currentInventory >= loc.desiredInventory
+    }
+  });
+}
+
+/*
+Question 2
+
+Consider that we have inventory for a specific food item at a centralized warehouse hub 
+that needs to be distributed to each satellite location to meet their required inventory to the best of our ability.
+
+Each satellite location is represented by an object:
+
+{
+	name: "Berkeley",
+	desiredInventory: 10,
+	currentInventory: 5
+}
+
+Given a list of locations with length N, 
+distribute the warehouse hub's inventory to each location so they can fulfill orders for the day.
+
+Notes:
+	1. No location should end with more inventory than they require.
+	2. You may not allocate more inventory than available to the warehouse hub.
+  3. Assume input is valid
+*/
+
+// put logic here, return list of locations with their updated inventory
+
+const distribute = (warehouseInventory, locations) => {
+  let remainingInventory = warehouseInventory;
+  const presortedLoc = presort(locations);
+  
+  return presortedLoc.map((loc) => {
+    if (loc.missingInventory <= remainingInventory) {
+      remainingInventory = remainingInventory - loc.missingInventory;
+      return {
+      	...loc,
+        currentInventory: loc.desiredInventory,
+      }
+    } else if (remainingInventory > 0) {
+      return {
+        ...loc,
+        currentInventory: loc.currentInventory + remainingInventory,
+      }
+    } else {
+      return loc
+    }
+  });  
+}
+
+const presort = (locations) => {
+  const copy = [...locations];
+  copy.map((loc) => {
+    ...loc,
+    missingInventory: determineMissingInv(loc);
+  });
+  return copy.sort((locA, locB) => locA.missingInventory - locB.missingInventory) 
+}
+
+const determineMissingInv = (location) => {
+ return location.desiredInventory - location.currentInventory;
+}
