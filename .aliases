@@ -1,0 +1,44 @@
+#!/bin/bash
+
+alias sl="ls"
+alias ls="ls -G"
+alias irb="pry"
+alias be="bundle exec"
+alias gs="git status"
+alias ga="git add"
+alias gA="git add -A"
+alias gcm="git commit -m"
+alias log="git log"
+alias stash="git stash"
+alias stash -l="git stash list"
+alias stashlist="git stash list"
+alias stash -p="git stash pop"
+alias diff="git diff"
+alias branch="git branch"
+alias gb="git branch"
+alias gb -d="git branch -d"
+alias co="git checkout"
+alias co -b="git checkout -b"
+alias gcb="git checkout -b"
+alias pull="git pull"
+alias push="git push origin"
+
+alias bcue="npm run build-cueedu"
+alias scue="npm run start-cueedu"
+alias baws="npm run build-all-aws"
+
+alias cover="npm run test-with-coverage"
+
+alias psa="docker ps -a"
+alias db="docker run -d -p 27017:27017 --name accounts --rm -v ~/data:/data/db mongo:3.6.10-stretch"
+
+# make `g` behave like `git status` with no args, or `git` with args
+g () {
+  if [ $# -eq 0 ]
+  then
+    git status
+  else
+    git "$@"
+  fi
+}
+__git_complete g _git
