@@ -24,6 +24,7 @@
 [mergetool "extMerge"]
         cmd = extMerge "$BASE" $LOCAL" $REMOTE" "$MERGED"
         trustExitCode = false
-        // install p4merge for this
 [diff]
         external = extDiff
+# install p4merge for merge & diff tool
+# instructions: http://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
