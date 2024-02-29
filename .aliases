@@ -23,12 +23,6 @@ alias gcb="git checkout -b"
 alias pull="git pull"
 alias push="git push origin"
 
-alias bcue="npm run build-cueedu"
-alias scue="npm run start-cueedu"
-alias baws="npm run build-all-aws"
-
-alias cover="npm run test-with-coverage"
-
 alias psa="docker ps -a"
 alias db="docker run -d -p 27017:27017 --name accounts --rm -v ~/data:/data/db mongo:3.6.10-stretch"
 
@@ -41,4 +35,4 @@ g () {
     git "$@"
   fi
 }
-__git_complete g _git
+# __git_complete g _git
