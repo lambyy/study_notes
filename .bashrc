@@ -10,6 +10,7 @@ source "$HOME/.git-prompt.sh"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export NODE_PATH=$(npm config get prefix)/lib/node_modules
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 
 # make vim the default text editor
 export EDITOR="vim"
@@ -38,3 +39,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # load any local configuration
 [[ -f "$HOME/.bashrc.local" ]] && source "$HOME/.bashrc.local"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
